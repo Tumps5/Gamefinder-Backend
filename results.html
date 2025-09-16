@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link para o CSS principal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-gamepad"></i>
+            <h1>GameFinder</h1>
+        </div>
+        <form id="search-form" action="results.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Buscar jogos...">
+            <button type="submit" title="Buscar"><i class="fas fa-search"></i></button>
+        </form>
+    </header>
+
+    <main class="main-content">
+        <section class="search-results-section">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-search"></i> Resultados da Busca para: "<span id="search-query-display"></span>"</h2>
+                <div class="filter-sort-container">
+                    <div class="filter-group">
+                        <label for="category-filter">Categoria:</label>
+                        <select id="category-filter">
+                            <option value="all">Todas</option>
+                            <!-- Opções de categoria serão preenchidas via JS -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Ordenar por:</label>
+                        <select id="sort-by">
+                            <option value="relevance">Relevância</option>
+                            <option value="price-asc">Preço: Menor para Maior</option>
+                            <option value="price-desc">Preço: Maior para Menor</option>
+                            <option value="name-asc">Nome: A-Z</option>
+                            <option value="name-desc">Nome: Z-A</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="games-grid" id="search-results-grid">
+                    <!-- Cards de jogos serão carregados aqui -->
+                </div>
+                <div id="no-results-message" class="no-results">
+                    <i class="fas fa-frown fa-3x"></i>
+                    <p>Nenhum resultado encontrado para sua busca.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 GameFinder - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" title="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
