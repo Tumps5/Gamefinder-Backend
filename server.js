@@ -18,18 +18,18 @@ if (!globalThis.fetch) {
 }
 
 const app = express();
-const PORT = 3001; // Alterado para porta 3001 para evitar conflito
+// Use environment port or default 3000
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// Servir arquivos estáticos do frontend
-const path = require('path');
-app.use(express.static(path.join(__dirname)));
-// Rota da página inicial
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// Removed serving static files and HTML routes as per instructions
+// const path = require('path');
+// app.use(express.static(path.join(__dirname)));
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 // ----- CONFIGURAÇÕES DA TWITCH -----
 const CLIENT_ID = "083qn0q19mcx8y2f4e6bxw3coatsr1";
